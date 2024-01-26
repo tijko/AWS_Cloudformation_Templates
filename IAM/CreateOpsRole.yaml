@@ -9,8 +9,8 @@ Resources:
       Monitoring: 'true'
       DisableApiTermination: 'false'
       IamInstanceProfile:
-        !Ref tijkoInstanceProfile
-  tijko:
+        !Ref OpsInstanceProfile
+  Ops:
     Type: AWS::IAM::Role
     Properties:
       AssumeRolePolicyDocument:
@@ -26,7 +26,7 @@ Resources:
   RolePolicies:
     Type: AWS::IAM::Policy
     Properties:
-      PolicyName: tijko-policy
+      PolicyName: Ops-Policy
       PolicyDocument:
         Version: '2012-10-17'
         Statement:
@@ -34,10 +34,10 @@ Resources:
           Action: "*"
           Resource: "*"
       Roles:
-      - !Ref tijko
-  tijkoInstanceProfile:
+      - !Ref Ops
+  OpsInstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
       Path: "/"
       Roles:
-      - !Ref tijko
+      - !Ref Ops
