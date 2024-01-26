@@ -31,7 +31,10 @@ Resources:
         Version: '2012-10-17'
         Statement:
         - Effect: Allow
-          Action: ['cloudformation:Describe*', 'cloudformation:List*', 'cloudformation.Get*']
+          Action: 
+            - 'cloudformation:Describe*'
+            - 'cloudformation:List*'
+            - 'cloudformation.Get*'
           Resource: "*"
       Roles:
       - !Ref Dev
