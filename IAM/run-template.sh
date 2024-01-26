@@ -1,5 +1,5 @@
 aws cloudformation create-stack \
-  --stack-name tijko-role \
+  --stack-name developer \
   --template-body file://CreateDevRole.yaml \
   --profile tijko \
   --capabilities CAPABILITY_IAM \
