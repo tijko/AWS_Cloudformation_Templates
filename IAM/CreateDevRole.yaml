@@ -34,7 +34,7 @@ Resources:
           Action: 
             - 'cloudformation:Describe*'
             - 'cloudformation:List*'
-            - 'cloudformation.Get*'
+            - 'cloudformation:Get*'
           Resource: "*"
       Roles:
       - !Ref Dev
